@@ -1,0 +1,93 @@
+﻿namespace CadastroNif
+{
+    partial class Cadastro
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.CadastrarNifButton = new System.Windows.Forms.Button();
+            this.SobreButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // CadastrarNifButton
+            // 
+            this.CadastrarNifButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CadastrarNifButton.Location = new System.Drawing.Point(12, 12);
+            this.CadastrarNifButton.Name = "CadastrarNifButton";
+            this.CadastrarNifButton.Size = new System.Drawing.Size(79, 43);
+            this.CadastrarNifButton.TabIndex = 0;
+            this.CadastrarNifButton.Text = "Cadastrar NIF";
+            this.CadastrarNifButton.UseVisualStyleBackColor = true;
+            this.CadastrarNifButton.Click += new System.EventHandler(this.CadastrarButton_Click);
+            // 
+            // SobreButton
+            // 
+            this.SobreButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SobreButton.Location = new System.Drawing.Point(113, 231);
+            this.SobreButton.Name = "SobreButton";
+            this.SobreButton.Size = new System.Drawing.Size(68, 28);
+            this.SobreButton.TabIndex = 1;
+            this.SobreButton.Text = "Sobre";
+            this.SobreButton.UseVisualStyleBackColor = true;
+            this.SobreButton.Click += new System.EventHandler(this.SobreButton_Click);
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Location = new System.Drawing.Point(12, 74);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(79, 43);
+            this.EliminarButton.TabIndex = 2;
+            this.EliminarButton.Text = "Eliminar NIF";
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // Cadastro
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(193, 271);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.SobreButton);
+            this.Controls.Add(this.CadastrarNifButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "NIF";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button CadastrarNifButton;
+        private System.Windows.Forms.Button SobreButton;
+        private System.Windows.Forms.Button EliminarButton;
+    }
+}
+
