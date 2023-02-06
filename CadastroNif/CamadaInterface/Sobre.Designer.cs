@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SobreNif.CamadaInterface
+namespace Nif.CamadaInterface
 {
     partial class Sobre
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace EliminarNif.CamadaInterface
+namespace Nif.CamadaInterface
 {
     partial class Eliminar
     {
@@ -38,34 +38,34 @@ namespace EliminarNif.CamadaInterface
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 15);
-            this.label1.TabIndex = 1;
+            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.TabIndex = 17;
             this.label1.Text = "Nome Completo:";
             // 
             // NomeCompletoTextBox
             // 
-            this.NomeCompletoTextBox.Location = new System.Drawing.Point(119, 33);
+            this.NomeCompletoTextBox.Location = new System.Drawing.Point(117, 31);
             this.NomeCompletoTextBox.Name = "NomeCompletoTextBox";
-            this.NomeCompletoTextBox.Size = new System.Drawing.Size(171, 20);
-            this.NomeCompletoTextBox.TabIndex = 6;
+            this.NomeCompletoTextBox.Size = new System.Drawing.Size(196, 20);
+            this.NomeCompletoTextBox.TabIndex = 0;
             // 
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.EliminarButton.Location = new System.Drawing.Point(12, 94);
+            this.EliminarButton.Location = new System.Drawing.Point(15, 83);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(78, 32);
-            this.EliminarButton.TabIndex = 14;
+            this.EliminarButton.Size = new System.Drawing.Size(96, 32);
+            this.EliminarButton.TabIndex = 19;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // Eliminar
             // 
-            this.ClientSize = new System.Drawing.Size(332, 138);
+            this.ClientSize = new System.Drawing.Size(325, 127);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NomeCompletoTextBox);
             this.Controls.Add(this.label1);
@@ -80,6 +80,7 @@ namespace EliminarNif.CamadaInterface
         }
 
         #endregion
+
         private Label label1;
         private TextBox NomeCompletoTextBox;
         private Button EliminarButton;

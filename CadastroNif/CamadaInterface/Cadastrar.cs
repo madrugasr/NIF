@@ -1,18 +1,8 @@
-﻿using CadastroNif.CamadaInterface;
-using CamadaNegocio;
-using SobreNif.CamadaInterface;
+﻿using CamadaNegocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CadastroNif.CamadaInterface
+namespace Nif.CamadaInterface
 {
     public partial class Cadastrar : Form
     {
@@ -34,8 +24,8 @@ namespace CadastroNif.CamadaInterface
             this.SexoComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             this.SexoComboBox.Items.Clear();
-            this.SexoComboBox.Items.Add("Masculino");
-            this.SexoComboBox.Items.Add("Feminino");
+            this.SexoComboBox.Items.Add(CadastroNif.Properties.Resources.SexoMasculino);
+            this.SexoComboBox.Items.Add(CadastroNif.Properties.Resources.SexoFeminino);
 
             this.SexoComboBox.SelectedIndex = (int) Sexo.Masculino;
         }
@@ -49,20 +39,11 @@ namespace CadastroNif.CamadaInterface
 
             return nif;
         }
-
-        /// <summary>
-        /// Novo NIF.
-        /// </summary>
-        private void NovoNif()
-        {
-            CamadaNegocio.Nif nif = CamadaNegocio.Nif.NovoNif();
-            this.PreencherCadastroNIF(nif);
-        }
         
         /// <summary>
         /// Preenche o formulário com os dados do NIF.
         /// </summary>
-        private void PreencherCadastroNIF(CamadaNegocio.Nif nif)
+        private void PreencherCadastroNIF(CamadaNegocio.NIF nif)
         {
             if (nif != null)
             {
@@ -85,25 +66,37 @@ namespace CadastroNif.CamadaInterface
             string erro = string.Empty;
             if (this.ValidarDado())
             {
-                CamadaNegocio.Nif nif = PreencherDados();
+                CamadaNegocio.NIF nif = PreencherDados();
                 if (nif.Gravar(out erro))
-                {                    
-                    MessageBox.Show("Gravado com sucesso.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {
+                    MessageBox.Show(CadastroNif.Properties.Resources.GravadoSucesso, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show($"Erro ao gravar. Erro=[{erro}]", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show($"Erro ao gravar. Erro=[{erro}]", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(CadastroNif.Properties.Resources.GravadoErro + erro, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                LimparDadosFormulário();
             }
+        }
+
+        public void LimparDadosFormulário()
+        {
+            NomeCompletoTextBox.Text = string.Empty;
+            MoradaTextBox.Text = string.Empty;
+            ProfissaoTextBox.Text = string.Empty;
+            TelefoneTextBox.Text = string.Empty;
+            EmailTextBox.Text = string.Empty;
+            nifGeradoLabel.Text = string.Empty;
         }
 
         /// <summary>
         /// Recebe os dados do formulário.
         /// </summary>
         /// <returns>Retorna os dados inseridos.</returns>
-        private CamadaNegocio.Nif PreencherDados()
+        private CamadaNegocio.NIF PreencherDados()
         {
-            CamadaNegocio.Nif nif = new CamadaNegocio.Nif()
+            CamadaNegocio.NIF nif = new CamadaNegocio.NIF()
             {
                 Nome = this.NomeCompletoTextBox.Text,
                 Morada = this.MoradaTextBox.Text,
@@ -112,7 +105,7 @@ namespace CadastroNif.CamadaInterface
                 Profissao = this.ProfissaoTextBox.Text,
                 Email = this.EmailTextBox.Text,
                 Telefone = this.TelefoneTextBox.Text,
-                NIF = Convert.ToInt32(this.NifLabel.Text)
+                Nif = Convert.ToInt32(this.NifLabel.Text)
             };
             return nif;
         }
@@ -137,27 +130,27 @@ namespace CadastroNif.CamadaInterface
 
             if (string.IsNullOrEmpty(nome))
             {
-                MessageBox.Show("O campo nome não pode estar vazia.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoNome, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.IsNullOrEmpty(morada))
             {
-                MessageBox.Show("O campo nome não pode estar vazia.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoMorada, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dataNascimento >= today)
             {
-                MessageBox.Show("Data de nascimento não pode ser superior nem igual a data de hoje.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoDataNascimento, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.IsNullOrEmpty(profissao))
             {
-                MessageBox.Show("O campo nome não pode estar vazia.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoProfissao, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.IsNullOrEmpty(email))
             {
-                MessageBox.Show("O campo nome não pode estar vazia.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoEmail, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.IsNullOrEmpty(telefone))
             {
-                MessageBox.Show("O campo nome não pode estar vazia.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoTelefone, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -170,25 +163,10 @@ namespace CadastroNif.CamadaInterface
         #endregion
 
         #region Eventos
-
-        private void Novo_Click(object sender, EventArgs e)
-        {
-            NovoNif();
-        }
-
         private void Gravar_Click(object sender, EventArgs e)
         {
             GravarNif();
         }
-
-        private void Sobre_Click(object sender, EventArgs e)
-        {
-            Sobre sobre = new Sobre();
-            sobre.ShowDialog();
-        }
-
         #endregion
-
-
     }
 }

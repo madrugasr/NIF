@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CadastrarNifButton = new System.Windows.Forms.Button();
+            this.CadastrarButton = new System.Windows.Forms.Button();
             this.SobreButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.ObterButton = new System.Windows.Forms.Button();
+            this.ListarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // CadastrarNifButton
+            // CadastrarButton
             // 
-            this.CadastrarNifButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CadastrarNifButton.Location = new System.Drawing.Point(12, 12);
-            this.CadastrarNifButton.Name = "CadastrarNifButton";
-            this.CadastrarNifButton.Size = new System.Drawing.Size(79, 43);
-            this.CadastrarNifButton.TabIndex = 0;
-            this.CadastrarNifButton.Text = "Cadastrar NIF";
-            this.CadastrarNifButton.UseVisualStyleBackColor = true;
-            this.CadastrarNifButton.Click += new System.EventHandler(this.CadastrarButton_Click);
+            this.CadastrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CadastrarButton.Location = new System.Drawing.Point(12, 12);
+            this.CadastrarButton.Name = "CadastrarButton";
+            this.CadastrarButton.Size = new System.Drawing.Size(79, 43);
+            this.CadastrarButton.TabIndex = 0;
+            this.CadastrarButton.Text = "Cadastrar";
+            this.CadastrarButton.UseVisualStyleBackColor = true;
+            this.CadastrarButton.Click += new System.EventHandler(this.CadastrarButton_Click);
             // 
             // SobreButton
             // 
             this.SobreButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SobreButton.Location = new System.Drawing.Point(113, 231);
+            this.SobreButton.Location = new System.Drawing.Point(113, 161);
             this.SobreButton.Name = "SobreButton";
             this.SobreButton.Size = new System.Drawing.Size(68, 28);
             this.SobreButton.TabIndex = 1;
@@ -62,18 +64,41 @@
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(79, 43);
             this.EliminarButton.TabIndex = 2;
-            this.EliminarButton.Text = "Eliminar NIF";
+            this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // ObterButton
+            // 
+            this.ObterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ObterButton.Location = new System.Drawing.Point(102, 12);
+            this.ObterButton.Name = "ObterButton";
+            this.ObterButton.Size = new System.Drawing.Size(79, 43);
+            this.ObterButton.TabIndex = 3;
+            this.ObterButton.Text = "Obter";
+            this.ObterButton.UseVisualStyleBackColor = true;
+            this.ObterButton.Click += new System.EventHandler(this.ObterButton_Click);
+            // 
+            // ListarButton
+            // 
+            this.ListarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListarButton.Location = new System.Drawing.Point(102, 74);
+            this.ListarButton.Name = "ListarButton";
+            this.ListarButton.Size = new System.Drawing.Size(79, 43);
+            this.ListarButton.TabIndex = 4;
+            this.ListarButton.Text = "Listar";
+            this.ListarButton.UseVisualStyleBackColor = true;
             // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(193, 271);
+            this.ClientSize = new System.Drawing.Size(193, 201);
+            this.Controls.Add(this.ListarButton);
+            this.Controls.Add(this.ObterButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.SobreButton);
-            this.Controls.Add(this.CadastrarNifButton);
+            this.Controls.Add(this.CadastrarButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Cadastro";
@@ -85,9 +110,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button CadastrarNifButton;
+        private System.Windows.Forms.Button CadastrarButton;
         private System.Windows.Forms.Button SobreButton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button ObterButton;
+        private System.Windows.Forms.Button ListarButton;
     }
 }
 

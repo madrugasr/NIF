@@ -1,14 +1,5 @@
-﻿using CadastroNif.CamadaInterface;
-using EliminarNif.CamadaInterface;
-using SobreNif.CamadaInterface;
+﻿using Nif.CamadaInterface;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CadastroNif
@@ -36,6 +27,12 @@ namespace CadastroNif
         {
             Eliminar eliminar = new Eliminar();
             eliminar.ShowDialog();
+        }
+
+        private void ObterButton_Click(object sender, EventArgs e)
+        {
+            Obter obter = new Obter();
+            obter.ShowDialog();
         }
     }
 }

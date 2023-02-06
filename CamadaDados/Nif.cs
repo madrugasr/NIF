@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CamadaDados
 {
-    public class Nif
+    public class NIF
     {
         #region Metodos
 
@@ -16,7 +16,7 @@ namespace CamadaDados
         {
             erro = string.Empty;
 
-            bool resultado = Nif.GravarNif(nome, morada, sexo, dataNascimento, profissao, email, telefone, nif, out erro);
+            bool resultado = NIF.GravarNif(nome, morada, sexo, dataNascimento, profissao, email, telefone, nif, out erro);
 
             return resultado;
         }
@@ -160,7 +160,8 @@ namespace CamadaDados
         }
 
 
-        public static bool Obter(string nome, ref string morada, ref int sexo, ref DateTime dataNascimento, ref string profissao, ref string email, ref string telefone, out string erro)
+        public static bool Obter(string nome, ref string morada, ref int sexo, ref DateTime dataNascimento, 
+            ref string profissao, ref string email, ref string telefone, ref int nif, out string erro)
         {
             bool resultado = false;
             erro = string.Empty;
@@ -187,32 +188,33 @@ namespace CamadaDados
                     sqlDataReader.Read();
                     if (!sqlDataReader.IsDBNull(1))
                     {
-                        nome = sqlDataReader.GetString(1);
+                        morada = sqlDataReader.GetString(1);
                     }
                     if (!sqlDataReader.IsDBNull(2))
                     {
-                        morada = sqlDataReader.GetString(2);
+                        sexo = sqlDataReader.GetInt32(2);
                     }
                     if (!sqlDataReader.IsDBNull(3))
                     {
-                        sexo = sqlDataReader.GetInt32(3);
+                        dataNascimento = sqlDataReader.GetDateTime(3);
                     }
                     if (!sqlDataReader.IsDBNull(4))
                     {
-                        dataNascimento = sqlDataReader.GetDateTime(4);
+                        profissao = sqlDataReader.GetString(4);
                     }
                     if (!sqlDataReader.IsDBNull(5))
                     {
-                        profissao = sqlDataReader.GetString(5);
+                        email = sqlDataReader.GetString(5);
                     }
                     if (!sqlDataReader.IsDBNull(6))
                     {
-                        email = sqlDataReader.GetString(6);
+                        telefone = sqlDataReader.GetString(6);
                     }
                     if (!sqlDataReader.IsDBNull(7))
                     {
-                        telefone = sqlDataReader.GetString(7);
+                        nif = sqlDataReader.GetInt32(7);
                     }
+                    
                     resultado = true;
                 }
 
@@ -222,7 +224,6 @@ namespace CamadaDados
             {
                 erro = ex.Message;
             }
-
             return resultado;
         }
         #endregion

@@ -1,39 +1,17 @@
-﻿using CadastroNif.CamadaInterface;
-using CamadaNegocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace EliminarNif.CamadaInterface
+namespace Nif.CamadaInterface
 {
     public partial class Eliminar : Form
     {
         
         public Eliminar()
-        {
-            InitializeComponent();
+        { 
+            InitializeComponent();  
         }
 
-        #region Metodos
-        /// <summary>
-        /// Recebe os dados do formulário.
-        /// </summary>
-        /// <returns>Retorna os dados inseridos.</returns>
-        private CamadaNegocio.Nif PreencherDados()
-        {
-            CamadaNegocio.Nif nif = new CamadaNegocio.Nif();
-            nif.Nome = this.NomeCompletoTextBox.Text;
-
-            return nif;
-        }
-        
+        #region Metodo
         /// <summary>
         /// Validação dos dados de entrada no formulário.
         /// </summary>
@@ -46,8 +24,8 @@ namespace EliminarNif.CamadaInterface
 
             if (string.IsNullOrEmpty(nome))
             {
-                MessageBox.Show("O campo nome não pode estar vazia.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }          
+                MessageBox.Show(CadastroNif.Properties.Resources.ValidaDadoNome, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 ok = true;
@@ -58,28 +36,61 @@ namespace EliminarNif.CamadaInterface
 
         private void EliminarNif()
         {
-            if (this.ValidarDado())
+            if (ValidarDado())
             {
-                CamadaNegocio.Nif nif = this.PreencherDados();
+
+                string erro = string.Empty;
+                if (this.ValidarDado())
+                {
+                    CamadaNegocio.NIF nif = PreencherDados();
+                    if (MessageBox.Show(CadastroNif.Properties.Resources.EliminarCerteza, Application.ProductName, MessageBoxButtons.YesNo, 
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (nif.Eliminar(out erro))
+                        {
+                            MessageBox.Show(CadastroNif.Properties.Resources.EliminarSucesso, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(CadastroNif.Properties.Resources.EliminarErro, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    
+                }
+
                 
-                if (nif.Eliminar(out string erro))
-                {
-                    MessageBox.Show("Eliminado com sucesso.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"Erro a eliminar. Erro=[{erro}]", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
         }
 
+
+
+        // <summary>
+        // Recebe os dados do formulário.
+        // </summary>
+        //<returns>Retorna os dados inseridos.</returns>
+        private CamadaNegocio.NIF PreencherDados()
+        {
+            CamadaNegocio.NIF nif = new CamadaNegocio.NIF()
+            {
+                Nome = this.NomeCompletoTextBox.Text,
+
+            };
+            return nif;
+        }
+
         #endregion
 
-        #region Eventos   
-        private void Eliminar_Click(object sender, EventArgs e)
+        #region Eventos
+
+        private void EliminarButton_Click(object sender, EventArgs e)
         {
             EliminarNif();
         }
+
+        
+
         #endregion
+
+
     }
 }

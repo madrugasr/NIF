@@ -2,7 +2,7 @@
 
 namespace Nif.CamadaInterface
 {
-    partial class Cadastrar
+    partial class Obter
     {
         /// <summary>
         /// Required designer variable.
@@ -33,20 +33,21 @@ namespace Nif.CamadaInterface
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.NomeCompletoTextBox = new System.Windows.Forms.TextBox();
-            this.MoradaTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ProfissaoTextBox = new System.Windows.Forms.TextBox();
-            this.GravarButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TelefoneTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.DataNascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.SexoComboBox = new System.Windows.Forms.ComboBox();
             this.nifGeradoLabel = new System.Windows.Forms.Label();
             this.NifLabel = new System.Windows.Forms.Label();
+            this.SexoComboBox = new System.Windows.Forms.ComboBox();
+            this.MoradaLabel = new System.Windows.Forms.Label();
+            this.ProfissaoLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.TelefoneLabel = new System.Windows.Forms.Label();
+            this.ObterButton = new System.Windows.Forms.Button();
+            this.NomeCompletoTextBox = new System.Windows.Forms.TextBox();
+            this.LimparDadosButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@ namespace Nif.CamadaInterface
             this.label1.Location = new System.Drawing.Point(12, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 15);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Nome Completo:";
             // 
             // label4
@@ -66,7 +67,7 @@ namespace Nif.CamadaInterface
             this.label4.Location = new System.Drawing.Point(12, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 4;
             this.label4.Text = "Sexo:";
             // 
             // label5
@@ -76,22 +77,8 @@ namespace Nif.CamadaInterface
             this.label5.Location = new System.Drawing.Point(12, 197);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 15);
-            this.label5.TabIndex = 13;
+            this.label5.TabIndex = 5;
             this.label5.Text = "Profissão:";
-            // 
-            // NomeCompletoTextBox
-            // 
-            this.NomeCompletoTextBox.Location = new System.Drawing.Point(144, 40);
-            this.NomeCompletoTextBox.Name = "NomeCompletoTextBox";
-            this.NomeCompletoTextBox.Size = new System.Drawing.Size(257, 20);
-            this.NomeCompletoTextBox.TabIndex = 0;
-            // 
-            // MoradaTextBox
-            // 
-            this.MoradaTextBox.Location = new System.Drawing.Point(144, 75);
-            this.MoradaTextBox.Name = "MoradaTextBox";
-            this.MoradaTextBox.Size = new System.Drawing.Size(257, 20);
-            this.MoradaTextBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -100,26 +87,8 @@ namespace Nif.CamadaInterface
             this.label2.Location = new System.Drawing.Point(12, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
-            this.label2.TabIndex = 10;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Morada:";
-            // 
-            // ProfissaoTextBox
-            // 
-            this.ProfissaoTextBox.Location = new System.Drawing.Point(144, 189);
-            this.ProfissaoTextBox.Name = "ProfissaoTextBox";
-            this.ProfissaoTextBox.Size = new System.Drawing.Size(257, 20);
-            this.ProfissaoTextBox.TabIndex = 4;
-            // 
-            // GravarButton
-            // 
-            this.GravarButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.GravarButton.Location = new System.Drawing.Point(15, 360);
-            this.GravarButton.Name = "GravarButton";
-            this.GravarButton.Size = new System.Drawing.Size(60, 32);
-            this.GravarButton.TabIndex = 8;
-            this.GravarButton.Text = "Gravar";
-            this.GravarButton.UseVisualStyleBackColor = true;
-            this.GravarButton.Click += new System.EventHandler(this.Gravar_Click);
             // 
             // label6
             // 
@@ -128,15 +97,8 @@ namespace Nif.CamadaInterface
             this.label6.Location = new System.Drawing.Point(12, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 15);
-            this.label6.TabIndex = 14;
+            this.label6.TabIndex = 17;
             this.label6.Text = "Email:";
-            // 
-            // EmailTextBox
-            // 
-            this.EmailTextBox.Location = new System.Drawing.Point(144, 226);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(257, 20);
-            this.EmailTextBox.TabIndex = 5;
             // 
             // label7
             // 
@@ -145,15 +107,8 @@ namespace Nif.CamadaInterface
             this.label7.Location = new System.Drawing.Point(12, 270);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 15);
-            this.label7.TabIndex = 15;
+            this.label7.TabIndex = 19;
             this.label7.Text = "Telefone:";
-            // 
-            // TelefoneTextBox
-            // 
-            this.TelefoneTextBox.Location = new System.Drawing.Point(144, 265);
-            this.TelefoneTextBox.Name = "TelefoneTextBox";
-            this.TelefoneTextBox.Size = new System.Drawing.Size(78, 20);
-            this.TelefoneTextBox.TabIndex = 6;
             // 
             // label8
             // 
@@ -162,7 +117,7 @@ namespace Nif.CamadaInterface
             this.label8.Location = new System.Drawing.Point(12, 157);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 15);
-            this.label8.TabIndex = 12;
+            this.label8.TabIndex = 21;
             this.label8.Text = "Data de Nascimento:";
             // 
             // DataNascimentoDateTimePicker
@@ -171,15 +126,7 @@ namespace Nif.CamadaInterface
             this.DataNascimentoDateTimePicker.Location = new System.Drawing.Point(144, 152);
             this.DataNascimentoDateTimePicker.Name = "DataNascimentoDateTimePicker";
             this.DataNascimentoDateTimePicker.Size = new System.Drawing.Size(78, 20);
-            this.DataNascimentoDateTimePicker.TabIndex = 3;
-            // 
-            // SexoComboBox
-            // 
-            this.SexoComboBox.FormattingEnabled = true;
-            this.SexoComboBox.Location = new System.Drawing.Point(144, 112);
-            this.SexoComboBox.Name = "SexoComboBox";
-            this.SexoComboBox.Size = new System.Drawing.Size(78, 21);
-            this.SexoComboBox.TabIndex = 2;
+            this.DataNascimentoDateTimePicker.TabIndex = 23;
             // 
             // nifGeradoLabel
             // 
@@ -188,7 +135,7 @@ namespace Nif.CamadaInterface
             this.nifGeradoLabel.Location = new System.Drawing.Point(12, 306);
             this.nifGeradoLabel.Name = "nifGeradoLabel";
             this.nifGeradoLabel.Size = new System.Drawing.Size(29, 15);
-            this.nifGeradoLabel.TabIndex = 16;
+            this.nifGeradoLabel.TabIndex = 25;
             this.nifGeradoLabel.Text = "NIF:";
             // 
             // NifLabel
@@ -200,31 +147,105 @@ namespace Nif.CamadaInterface
             this.NifLabel.Size = new System.Drawing.Size(0, 17);
             this.NifLabel.TabIndex = 26;
             // 
-            // Cadastrar
+            // SexoComboBox
             // 
-            this.ClientSize = new System.Drawing.Size(413, 404);
+            this.SexoComboBox.FormattingEnabled = true;
+            this.SexoComboBox.Location = new System.Drawing.Point(144, 112);
+            this.SexoComboBox.Name = "SexoComboBox";
+            this.SexoComboBox.Size = new System.Drawing.Size(78, 21);
+            this.SexoComboBox.TabIndex = 24;
+            // 
+            // MoradaLabel
+            // 
+            this.MoradaLabel.AutoSize = true;
+            this.MoradaLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoradaLabel.Location = new System.Drawing.Point(141, 81);
+            this.MoradaLabel.Name = "MoradaLabel";
+            this.MoradaLabel.Size = new System.Drawing.Size(0, 17);
+            this.MoradaLabel.TabIndex = 27;
+            // 
+            // ProfissaoLabel
+            // 
+            this.ProfissaoLabel.AutoSize = true;
+            this.ProfissaoLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfissaoLabel.Location = new System.Drawing.Point(141, 195);
+            this.ProfissaoLabel.Name = "ProfissaoLabel";
+            this.ProfissaoLabel.Size = new System.Drawing.Size(0, 17);
+            this.ProfissaoLabel.TabIndex = 28;
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLabel.Location = new System.Drawing.Point(141, 232);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(0, 17);
+            this.EmailLabel.TabIndex = 29;
+            // 
+            // TelefoneLabel
+            // 
+            this.TelefoneLabel.AutoSize = true;
+            this.TelefoneLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefoneLabel.Location = new System.Drawing.Point(141, 268);
+            this.TelefoneLabel.Name = "TelefoneLabel";
+            this.TelefoneLabel.Size = new System.Drawing.Size(0, 17);
+            this.TelefoneLabel.TabIndex = 30;
+            // 
+            // ObterButton
+            // 
+            this.ObterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.ObterButton.Location = new System.Drawing.Point(15, 360);
+            this.ObterButton.Name = "ObterButton";
+            this.ObterButton.Size = new System.Drawing.Size(60, 32);
+            this.ObterButton.TabIndex = 31;
+            this.ObterButton.Text = "Obter";
+            this.ObterButton.UseVisualStyleBackColor = true;
+            this.ObterButton.Click += new System.EventHandler(this.ObterButton_Click);
+            // 
+            // NomeCompletoTextBox
+            // 
+            this.NomeCompletoTextBox.Location = new System.Drawing.Point(144, 38);
+            this.NomeCompletoTextBox.Name = "NomeCompletoTextBox";
+            this.NomeCompletoTextBox.Size = new System.Drawing.Size(161, 20);
+            this.NomeCompletoTextBox.TabIndex = 0;
+            // 
+            // LimparDadosButton
+            // 
+            this.LimparDadosButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LimparDadosButton.Location = new System.Drawing.Point(245, 360);
+            this.LimparDadosButton.Name = "LimparDadosButton";
+            this.LimparDadosButton.Size = new System.Drawing.Size(60, 32);
+            this.LimparDadosButton.TabIndex = 32;
+            this.LimparDadosButton.Text = "Limpar";
+            this.LimparDadosButton.UseVisualStyleBackColor = true;
+            this.LimparDadosButton.Click += new System.EventHandler(this.LimparDadosButton_Click);
+            // 
+            // Obter
+            // 
+            this.ClientSize = new System.Drawing.Size(321, 404);
+            this.Controls.Add(this.LimparDadosButton);
+            this.Controls.Add(this.NomeCompletoTextBox);
+            this.Controls.Add(this.ObterButton);
+            this.Controls.Add(this.TelefoneLabel);
+            this.Controls.Add(this.EmailLabel);
+            this.Controls.Add(this.ProfissaoLabel);
+            this.Controls.Add(this.MoradaLabel);
             this.Controls.Add(this.NifLabel);
             this.Controls.Add(this.nifGeradoLabel);
             this.Controls.Add(this.SexoComboBox);
             this.Controls.Add(this.DataNascimentoDateTimePicker);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.TelefoneTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.GravarButton);
-            this.Controls.Add(this.ProfissaoTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.MoradaTextBox);
-            this.Controls.Add(this.NomeCompletoTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Cadastrar";
+            this.Name = "Obter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastrar";
+            this.Text = "Obter";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,19 +255,20 @@ namespace Nif.CamadaInterface
         private Label label1;
         private Label label4;
         private Label label5;
-        private TextBox NomeCompletoTextBox;
-        private TextBox MoradaTextBox;
         private Label label2;
-        private TextBox ProfissaoTextBox;
-        private Button GravarButton;
         private Label label6;
-        private TextBox EmailTextBox;
         private Label label7;
-        private TextBox TelefoneTextBox;
         private Label label8;
         private DateTimePicker DataNascimentoDateTimePicker;
-        private ComboBox SexoComboBox;
         private Label nifGeradoLabel;
         private Label NifLabel;
+        private ComboBox SexoComboBox;
+        private Label MoradaLabel;
+        private Label ProfissaoLabel;
+        private Label EmailLabel;
+        private Label TelefoneLabel;
+        private Button ObterButton;
+        private TextBox NomeCompletoTextBox;
+        private Button LimparDadosButton;
     }
 }

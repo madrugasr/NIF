@@ -13,18 +13,18 @@ namespace CamadaNegocio
         Masculino = 0,
         Feminino = 1
     }
-    public class Nif
+    public class NIF
     {
         #region Construtores
 
-        public Nif()
+        public NIF()
         {
 
         }
 
-        public Nif(string nome, string morada, Sexo sexo, DateTime dataNascimento, string profissao, 
-                    string email, string telefone)
-            : this()
+        public NIF(string nome, string morada, Sexo sexo, DateTime dataNascimento, string profissao,
+                    string email, string telefone, int nif)
+            : this ()
         {
             this.nome = nome;
             this.morada = morada;
@@ -33,6 +33,7 @@ namespace CamadaNegocio
             this.profissao = profissao;
             this.email = email;
             this.telefone = telefone;
+            this.nif = nif;
         }
 
         #endregion
@@ -97,11 +98,12 @@ namespace CamadaNegocio
 
         private int nif;
         
-        public int NIF
+        public int Nif
         {
             get { return nif; }
             set { nif = value; }
         }
+
 
 
 
@@ -120,12 +122,12 @@ namespace CamadaNegocio
             this.Telefone = string.Empty;          
         }
         
-        public static Nif NovoNif()
+        public static NIF NovoNif()
         {
-            Nif nif = new Nif();
-            nif.Novo();
+            NIF Nif = new NIF();
+            Nif.Novo();
 
-            return nif;
+            return Nif;
         }
 
         public bool Gravar(out string erro)
@@ -133,8 +135,8 @@ namespace CamadaNegocio
             bool ok = false;
             erro = string.Empty;
             
-            ok = CamadaDados.Nif.GravarNif(this.Nome, this.Morada, (int) this.Sexo, this.DataNascimento, 
-                this.Profissao, this.Email, this.Telefone, this.NIF, out erro);
+            ok = CamadaDados.NIF.GravarNif(this.Nome, this.Morada, (int) this.Sexo, this.DataNascimento, 
+                this.Profissao, this.Email, this.Telefone, this.Nif, out erro);
 
             return ok;
         }
@@ -144,14 +146,14 @@ namespace CamadaNegocio
             bool ok = false;
             erro = string.Empty;
 
-            ok = CamadaDados.Nif.Eliminar(this.Nome, out erro);
+            ok = CamadaDados.NIF.Eliminar(this.Nome, out erro);
 
             return ok;
         }
 
-        public static Nif ObterNif(string nome, out string erro)
+        public static NIF Obter(string nome, out string erro)
         {
-            Nif nif = null;
+            NIF Nif = null;
             erro = string.Empty;
 
             string morada = string.Empty;
@@ -160,19 +162,20 @@ namespace CamadaNegocio
             string profissao = string.Empty;
             string email = string.Empty;
             string telefone = string.Empty;
+            int nif = 0;
+
+
+            bool ok = CamadaDados.NIF.Obter(nome, ref morada, ref sexo, ref dataNascimento, ref profissao, ref email, ref telefone, ref nif, out erro);
             
-
-            bool ok = CamadaDados.Nif.Obter(nome, ref morada, ref sexo, ref dataNascimento, ref profissao, ref email, ref telefone, out erro);
-
             if (ok)
             {
-                nif = new Nif(nome, morada, (Sexo)sexo, dataNascimento, profissao, email, telefone);
+                Nif = new NIF(nome, morada, (Sexo)sexo, dataNascimento, profissao, email, telefone, nif);
             }
 
-            return nif;
+            return Nif;
         }
-     
-        #endregion      
+
+        #endregion
     }
 
     

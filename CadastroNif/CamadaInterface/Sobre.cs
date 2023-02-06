@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SobreNif.CamadaInterface
+namespace Nif.CamadaInterface
 {
     public partial class Sobre : Form
     {
